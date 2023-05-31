@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="dark:bg-zinc-900 dark:text-white md:px-7"
+        className="bg-zinc-900 text-white md:px-7"
         style={{ maxWidth: "100vw" }}
       >
         <Layout>{children}</Layout>

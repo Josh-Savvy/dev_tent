@@ -1,67 +1,13 @@
+import CommunityPageNav from "@/components/organisms/community";
 import React from "react";
 
 const CommunnityPage = () => {
   return (
-    <div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-      <div>CommunnityPage</div>
-    </div>
+    <>
+      <CommunityPageNav>
+        <div></div>
+      </CommunityPageNav>
+    </>
   );
 };
 

@@ -43,7 +43,7 @@ export const LeftSideBar = () => {
                 <Icon color="white" />
                 <span className="lg:flex hidden">{link.title}</span>
                 {link.title == "Notifications" ? (
-                  <span className="transition-all transition duration-300 bg-red-600 px-3 rounded-full text-white lg:flex hidden">
+                  <span className="transition-all transition duration-300 bg-red-600 p-1 px-2 rounded-full text-white lg:flex hidden">
                     2
                   </span>
                 ) : (
