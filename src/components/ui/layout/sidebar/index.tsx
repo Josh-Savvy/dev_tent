@@ -36,14 +36,14 @@ export const LeftSideBar = () => {
                 }animate__animated transition-all transition relative duration-300 hover:bg-gray-700 cursor-pointer p-2 px-4 rounded-lg`}
               >
                 {link.title == "Notifications" ? (
-                  <span className="absolute left-3 top-1 animate-pulse bg-red-600 rounded-full p-1 lg:hidden"></span>
+                  <span className="transition-all transition duration-300 absolute left-3 top-1 animate-pulse bg-red-600 rounded-full p-1 lg:hidden"></span>
                 ) : (
                   ""
                 )}
                 <Icon color="white" />
                 <span className="lg:flex hidden">{link.title}</span>
                 {link.title == "Notifications" ? (
-                  <span className="bg-red-600 px-3 rounded-full text-white lg:flex hidden">
+                  <span className="transition-all transition duration-300 bg-red-600 px-3 rounded-full text-white lg:flex hidden">
                     2
                   </span>
                 ) : (
