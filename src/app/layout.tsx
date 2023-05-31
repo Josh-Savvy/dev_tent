@@ -1,8 +1,9 @@
 import Layout from "@/components/ui/layout";
 import "./globals.css";
+import "animate.css/animate.css";
 
 export const metadata = {
-  title: `${0} | MeetMaxx`,
+  title: `${0} | DevTent`,
   description: "",
 };
 
