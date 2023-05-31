@@ -23,9 +23,9 @@ const PageLoader = () => {
 				/>
 			</div>
 			<div className="relative right-0 top-0 left-0 w-full h-full">
-				<div className="absolute right-0 w-[60%] bg-cyan-400 h-full animate__animated animate__slideInLeft animate__slower"></div>
-				<div className="absolute right-0 w-[40%] bg-cyan-600 h-full animate__animated animate__slideInLeft animate__slow"></div>
-				<div className="absolute right-0 w-[20%] bg-cyan-800 h-full animate__animated animate__slideInLeft"></div>
+				<div className="absolute right-0 w-[65%] bg-cyan-400 h-full animate__animated animate__slideInLeft animate__slower"></div>
+				<div className="absolute right-0 w-[45%] bg-cyan-600 h-full animate__animated animate__slideInLeft animate__slow"></div>
+				<div className="absolute right-0 w-[25%] bg-cyan-800 h-full animate__animated animate__slideInLeft"></div>
 			</div>
 		</div>
 	) : (
