@@ -5,8 +5,6 @@ import React, { useState } from "react";
 import * as ReactIcons from "react-ionicons";
 
 export const LeftSideBar = () => {
-  
-
   const links = [
     { icon: "GridOutline", link: "/", title: "Feed" },
     { icon: "PeopleOutline", link: "/community", title: "My community" },
@@ -17,7 +15,7 @@ export const LeftSideBar = () => {
   ];
   const [activeLink, setActiveLink] = useState("/");
   return (
-    <div className="hidden md:flex sticky top-20 h-full w-[23%] pt-5">
+    <div className="hidden md:flex sticky top-20 h-full w-[23%] sm:w-[12%] lg:w-[23%] pt-5 duration-300">
       <div className="group grid gap-8 text-sm pl-3 select-none">
         {links?.map((link, i) => {
           interface IconType {
@@ -30,18 +28,24 @@ export const LeftSideBar = () => {
               <div
                 onClick={() => {
                   setActiveLink(link.link);
-                  console.log({ link: link.link });
-                  console.log({ pathname: pathname });
                 }}
                 className={`flex items-center gap-2 duration-300 ${
-                  pathname === activeLink
+                  link.link === activeLink
                     ? "bg-gray-700 animate__fadeInUp"
                     : "bg-none"
-                }animate__animated transition-all transition duration-300 hover:bg-gray-700 cursor-pointer p-2 px-4 rounded-lg`}
+                }animate__animated transition-all transition relative duration-300 hover:bg-gray-700 cursor-pointer p-2 px-4 rounded-lg`}
               >
-                <Icon color="white" /> <span>{link.title}</span>
                 {link.title == "Notifications" ? (
-                  <span className="bg-red-600 px-3 rounded-full text-white">
+                  <span className="absolute left-0 top-0 animate-pulse bg-red-600 rounded-full px-1 lg:hidden">
+                    l
+                  </span>
+                ) : (
+                  ""
+                )}
+                <Icon color="white" />
+                <span className="lg:flex hidden">{link.title}</span>
+                {link.title == "Notifications" ? (
+                  <span className="bg-red-600 px-3 rounded-full text-white lg:flex hidden">
                     2
                   </span>
                 ) : (
@@ -53,8 +57,9 @@ export const LeftSideBar = () => {
         })}
 
         <Link href="#">
-          <div className="flex items-center gap-2 duration-300 hover:bg-gray-700 cursor-pointer p-2 px-4 rounded-lg">
-            <ReactIcons.LogOutOutline color="white" /> <span>Logout</span>
+          <div className="flex items-center gap-2 duration-300 hover:bg-red-800 bg-red-700 cursor-pointer p-2 px-4 rounded-lg">
+            <ReactIcons.LogOutOutline color="white" />
+            <span className="lg:flex hidden">Logout</span>
           </div>
         </Link>
       </div>
