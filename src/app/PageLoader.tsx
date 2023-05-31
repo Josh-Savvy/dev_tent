@@ -12,15 +12,18 @@ const PageLoader = () => {
 	return loading ? (
 		<div
 			className={`z-30 h-[100vh] w-[100vw] bg-slate-800 flex justify-center fixed ${
-				!loading ? "animate__animated animate__fadeOutDown" : ""
+				!loading ? "animate__animated animate__zoomIn" : ""
 			}`}
 		>
-			<div className="relative top-0 left-0 flex justify-center animate__animated animate__slideInRight animate__slow">
+			<div className="pl-auto md:pl-16 relative h-full w-full flex justify-center animate__animated animate__slideInDown animate__slow">
 				<img
 					src="/images/devtent_logo.png"
 					className="w-full h-full object-contain"
 					alt="Dev Tent Logo"
 				/>
+				<h1 className="font-bold text-3xl whitespace-nowrap absolute top-[60%] md:left-[33%] pl-10">
+					Dev Tent
+				</h1>
 			</div>
 			<div className="relative right-0 top-0 left-0 w-full h-full">
 				<div className="absolute right-0 w-[65%] bg-cyan-400 h-full animate__animated animate__slideInLeft animate__slower"></div>
