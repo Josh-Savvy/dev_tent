@@ -36,9 +36,7 @@ export const LeftSideBar = () => {
                 }animate__animated transition-all transition relative duration-300 hover:bg-gray-700 cursor-pointer p-2 px-4 rounded-lg`}
               >
                 {link.title == "Notifications" ? (
-                  <span className="absolute left-0 top-0 animate-pulse bg-red-600 rounded-full px-1 lg:hidden">
-                    l
-                  </span>
+                  <span className="absolute left-3 top-1 animate-pulse bg-red-600 rounded-full p-1 lg:hidden"></span>
                 ) : (
                   ""
                 )}
