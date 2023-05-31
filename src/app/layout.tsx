@@ -20,7 +20,7 @@ export default function RootLayout({
 			<body className="bg-zinc-900 text-white" style={{ maxWidth: "100vw" }}>
 				<PageLoader />
 				<Layout>
-					<div className=" md:px-7">{children}</div>
+					<div className="">{children}</div>
 				</Layout>
 			</body>
 		</html>

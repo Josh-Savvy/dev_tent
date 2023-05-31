@@ -6,7 +6,7 @@ import Link from "next/link";
 const LayoutNavbar = ({ children }: { children: React.ReactNode }) => {
   return (
     // <div className="fixed top-0 w-full">
-    <div className="">
+    <div className="md:px-7">
       <div className="bg-zinc-900 z-10 sticky top-0 h-full pt-5 pb-2">
         <div className="flex justify-between">
           <Link href="/">
@@ -39,7 +39,7 @@ const LayoutNavbar = ({ children }: { children: React.ReactNode }) => {
       <div className="flex">
         <SideBar.LeftSideBar />
         <div className="flex-grow relative">
-          <div className="mt-7">{children}</div>
+          <div className="pt-7">{children}</div>
         </div>
         <SideBar.RightSideBar />
       </div>

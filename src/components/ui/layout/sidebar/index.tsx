@@ -36,7 +36,7 @@ export const LeftSideBar = () => {
 		{ icon: "SettingsOutline", link: "#", title: "Settings" },
 	];
 	return (
-		<div className="hidden md:flex sticky md:top-24 top-20 h-full w-[23%] sm:w-[12%] lg:w-[23%] pt-20 duration-300">
+		<div className="hidden md:flex sticky md:top-24 top-20 h-[90%] w-[23%] sm:w-[12%] lg:w-[23%] duration-300">
 			<div className="group grid gap-8 text-sm pl-3 select-none">
 				{links?.map((link, i) => {
 					interface IconType {

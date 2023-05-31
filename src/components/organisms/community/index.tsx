@@ -19,9 +19,7 @@ const CommunityPageNav = ({ children }: { children: React.ReactNode }) => {
 					return (
 						<div
 							key={i}
-							className="flex font-medium items-center justify-center text-sm hover:bg-blue-600
-               bg-transparent p-2 rounded-lg px-3 transition transition-all
-              border border-[#111] duration-300 cursor-pointer"
+							className="flex font-medium items-center justify-center text-sm hover:bg-cyan-600 bg-transparent p-2 rounded-lg px-3 transition transition-all border border-[#111] duration-300 cursor-pointer"
 						>
 							{link.title}
 						</div>

@@ -21,7 +21,7 @@ const PageLoader = () => {
 					className="w-full h-full object-contain"
 					alt="Dev Tent Logo"
 				/>
-				<h1 className="font-bold text-3xl whitespace-nowrap absolute top-[60%] md:left-[33%] pl-10">
+				<h1 className="font-bold text-3xl whitespace-nowrap absolute top-[60%] lg:top-[63%] md:left-[33%] pl-10">
 					Dev Tent
 				</h1>
 			</div>

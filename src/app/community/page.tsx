@@ -11,6 +11,11 @@ const CommunnityPage = () => {
 					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
 					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
 					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
+					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
+					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
+					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
+					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
+					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
 				</div>
 			</CommunityPageNav>
 		</>

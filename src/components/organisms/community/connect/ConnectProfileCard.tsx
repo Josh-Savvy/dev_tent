@@ -56,7 +56,7 @@ const ConnectProfileCard = ({
 					Ignore
 				</div> */}
 				<div
-					className="flex w-full items-center justify-center text-sm bg-green-600 
+					className="flex w-full items-center justify-center text-sm bg-green-600 hover:bg-green-800 
                p-1 rounded-lg px-4 transition transition-all duration-300 cursor-pointer"
 				>
 					Follow back
