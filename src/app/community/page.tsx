@@ -1,23 +1,15 @@
 import CommunityPageNav from "@/components/organisms/community";
 import ConnectProfileCard from "@/components/organisms/community/connect/ConnectProfileCard";
+import CommunityPageTemplate from "@/templates/community";
+import CommunityPage from "@/templates/community";
 import React from "react";
 
 const CommunnityPage = () => {
+	const followers = parseFloat("10440").toLocaleString().toLowerCase();
+	const following = parseFloat("482").toLocaleString().toLowerCase();
 	return (
 		<>
-			<CommunityPageNav>
-				<div className="grid md:grid-cols-2 gap-5">
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-					<ConnectProfileCard name="Josh Bass" jobTitle="Musician" />
-				</div>
-			</CommunityPageNav>
+			<CommunityPageTemplate followers={followers} following={following} />
 		</>
 	);
 };

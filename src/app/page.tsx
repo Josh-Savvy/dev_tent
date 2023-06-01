@@ -1,7 +1,4 @@
-import Image from 'next/image'
-
-export default function Home() {
-  return (
-      <>Home</>
-  )
-}
+const Home = () => {
+	return <>Home</>;
+};
+export default Home;

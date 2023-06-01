@@ -4,6 +4,7 @@ import "./nprogress.css";
 import "animate.css/animate.css";
 import "nprogress/nprogress.css";
 import PageLoader from "./PageLoader";
+import { createContext } from "react";
 
 export const metadata = {
 	title: `${0} | DevTent`,

@@ -32,11 +32,11 @@ export const LeftSideBar = () => {
 		{ icon: "PeopleOutline", link: "/community", title: "My community" },
 		{ icon: "ChatboxOutline", link: "#", title: "Messages" },
 		{ icon: "NotificationsOutline", link: "#", title: "Notifications" },
-		{ icon: "PersonOutline", link: "#", title: "Profile" },
+		{ icon: "PersonOutline", link: "/profile", title: "Profile" },
 		{ icon: "SettingsOutline", link: "#", title: "Settings" },
 	];
 	return (
-		<div className="hidden md:flex sticky md:top-24 top-20 h-[90%] w-[23%] sm:w-[12%] lg:w-[23%] duration-300">
+		<div className="hidden md:flex sticky md:top-24 top-20 h-full w-[23%] sm:w-[12%] lg:w-[23%] duration-300 pt-5">
 			<div className="group grid gap-8 text-sm pl-3 select-none">
 				{links?.map((link, i) => {
 					interface IconType {
@@ -84,8 +84,54 @@ export const LeftSideBar = () => {
 
 export const RightSideBar = () => {
 	return (
-		<div className="sticky top-20 h-full w-[23%] pl-5 md:flex hidden pt-5">
-			<div>RightSideBar</div>
+		<div className="sticky top-20 h-full w-[23%] pl-5 lg:flex hidden pt-5">
+			<div className="grid gap-3">
+				<div className="flex justify-center">
+					<div className="flex border border-cyan-900 rounded-lg gap-2 items-center px-4">
+						<ReactIcons.SearchOutline color="white" />
+						<input
+							type="search"
+							placeholder="Search Friends!"
+							className="outline-none focus:ring-0 bg-transparent placeholder:text-sm text-white px-2 p-1"
+						/>
+					</div>
+				</div>
+				<div className="flex justify-center"></div>
+				<div className="grid gap-4">
+					<div className="flex justify-between items-center">
+						<p className="text-sm font-bold">Friends</p>
+						<div className="flex gap-1 items-center cursor-pointer">
+							<ReactIcons.Ellipse height="3px" width="3px" color="white" />
+							<ReactIcons.Ellipse height="3px" width="3px" color="white" />
+							<ReactIcons.Ellipse height="3px" width="3px" color="white" />
+						</div>
+					</div>
+				</div>
+				<div className="grid gap-4 mt-5 text-sm">
+					<div className="flex justify-between items-center">
+						<div className="w-12 h-auto">
+							<img
+								src="/images/istockphoto.jpg"
+								className="w-full rounded-full object-contain h-full"
+								alt="img"
+							/>
+						</div>
+						<div className="whitespace-nowrap">name name</div>
+						<div className="text-xs text-zinc-400">2 min</div>
+					</div>
+					<div className="flex justify-between items-center">
+						<div className="w-12 h-auto">
+							<img
+								src="/images/istockphoto.jpg"
+								className="w-full rounded-full object-contain h-full"
+								alt="img"
+							/>
+						</div>
+						<div className="whitespace-nowrap">name name</div>
+						<div className="p-1 rounded-full bg-green-500"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

@@ -1,18 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import React from "react";
+import { LogoFacebook, LogoLinkedin, LogoTwitter } from "react-ionicons";
 
 const ConnectProfileCard = ({
 	name,
 	jobTitle,
-	socialLinks,
+	facebookUrl,
+	twitterUrl,
+	linkedInUrl,
 }: {
 	name: string;
 	jobTitle: string;
-	socialLinks?: {
-		facebookUrl?: string;
-		twitterUrl?: string;
-		linkedInUrl?: string;
-	}[];
+	facebookUrl?: string;
+	twitterUrl?: string;
+	linkedInUrl?: string;
 }) => {
 	return (
 		<div className="grid gap-4 bg-zinc-900 p-2 rounded-lg">
@@ -29,22 +31,16 @@ const ConnectProfileCard = ({
 						<h1>{name}</h1>
 						<p>{jobTitle}</p>
 					</div>
-					<div className="flex w-full items-center">
-						{socialLinks?.map((link, i) => {
-							return link.facebookUrl ? (
-								<span key={i} className="w-1/3 flex items-center">
-									<>facebook</>
-								</span>
-							) : link.twitterUrl ? (
-								<span key={i} className="w-1/3 flex items-center">
-									<>twitter</>
-								</span>
-							) : (
-								<span key={i} className="w-1/3 flex items-center">
-									<>linkedin</>
-								</span>
-							);
-						})}
+					<div className="flex gap-5 w-full items-center">
+						<span className="flex items-center cursor-pointer">
+							<LogoFacebook color="dodgerblue" />
+						</span>
+						<span className="flex items-center cursor-pointer">
+							<LogoTwitter color="lightblue" />
+						</span>
+						<span className="flex items-center cursor-pointer">
+							<LogoLinkedin color="blue" />
+						</span>
 					</div>
 				</div>
 			</div>
