@@ -1,10 +1,13 @@
-import React, { ReactNode } from "react";
+import React, { Fragment, ReactNode } from "react";
+import Navbar from "./nav";
+import { ToastContainer } from "react-toastify";
 
 const Layout = (props: { children: ReactNode }) => {
 	return (
-		<div>
+		<Fragment>
+			<Navbar />
 			<div className="">{props.children}</div>
-		</div>
+		</Fragment>
 	);
 };
 
