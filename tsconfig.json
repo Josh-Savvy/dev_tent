@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"target": "ESNext",
+		"types": [
+			"react",
+			"react-dom",
+			"react-redux",
+			"@reduxjs/toolkit",
+			"vite/client"
+		],
+		"isolatedModules": true,
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"noEmit": true,
+		"jsx": "react-jsx"
+	},
+	"include": ["src"]
+}
