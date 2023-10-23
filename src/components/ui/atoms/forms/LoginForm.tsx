@@ -26,6 +26,7 @@ const LoginForm = () => {
 									type="email"
 									placeholder="Email/Username"
 									required
+									value={state.email}
 								/>
 							</div>
 							<div className="mb-5">
@@ -34,6 +35,7 @@ const LoginForm = () => {
 									type="password"
 									placeholder="Password"
 									required
+									value={state.password}
 								/>
 							</div>
 

@@ -9,6 +9,7 @@ export default interface ICustomInputProps
 	icon?: JSX.Element;
 	disabled?: boolean;
 	required?: boolean;
+	value?: string | number | readonly string[];
 	label?: string;
 	type?: HTMLInputTypeAttribute;
 	containerProps?: HTMLAttributes<HTMLDivElement>;
