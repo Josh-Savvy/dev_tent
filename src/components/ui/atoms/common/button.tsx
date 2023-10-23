@@ -10,8 +10,9 @@ const CustomButton = (props: ICustomButtonProps) => {
 			{...rest}
 			disabled={disabled}
 			className={classNames(
-				"text-white bg-[red] p-2 px-6 rounded",
+				"text-white bg-indigo-600 p-2 px-6 rounded w-full text-center",
 				icon ? "flex gap-4 items-center" : "",
+				disabled ? "cursor-not-allowed" : "",
 				className,
 			)}>
 			{icon ? icon : null} {buttonText}

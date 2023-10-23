@@ -1,51 +1,46 @@
 import React, { FormEvent } from "react";
-import FestivalIcon from "@mui/icons-material/Festival";
+import PatternIcon from "@mui/icons-material/Pattern";
+import CustomButton from "../common/button";
+import CustomInput from "../common/input";
+import useLoginMutation, {
+	ILoginState,
+} from "../../../../hooks/mutations/useLoginMutation";
 
 const LoginForm = () => {
-	const handleSubmit = (e: FormEvent) => {
-		e.preventDefault();
-		console.log();
-	};
+	const { state, handleSubmit, handleChange } = useLoginMutation();
+
 	return (
-		<form onSubmit={handleSubmit} className="container mx-auto p-8 flex">
-			<div className="max-w-md w-full mx-auto">
-				<h1 className="text-4xl text-center mb-12 font-thin flex items-center gap-4">
-					<FestivalIcon fontSize="inherit" /> DevTent
+		<form
+			onSubmit={handleSubmit}
+			className="container mx-auto p-8 flex mt-10 animate__animated animate__fadeIn">
+			<div className="max-w-lg w-full mx-auto">
+				<h1 className="text-4xl text-center mb-4 flex font-bold items-center gap-4">
+					<PatternIcon fontSize="inherit" /> Login
 				</h1>
 				<div className="bg-white rounded-lg overflow-hidden shadow-2xl">
 					<div className="p-8">
 						<form method="POST" className="" action="#">
 							<div className="mb-5">
-								<label
-									htmlFor="email"
-									className="block mb-2 text-sm font-medium text-gray-600">
-									Email
-								</label>
-
-								<input
-									type="text"
-									name="email"
-									className="block w-full p-3 rounded bg-gray-200 border border-transparent focus:outline-none"
+								<CustomInput
+									onChange={handleChange("email")}
+									type="email"
+									placeholder="Email/Username"
+									required
 								/>
 							</div>
-
 							<div className="mb-5">
-								<label
-									htmlFor="password"
-									className="block mb-2 text-sm font-medium text-gray-600">
-									Password
-								</label>
-
-								<input
-									type="text"
-									name="password"
-									className="block w-full p-3 rounded bg-gray-200 border border-transparent focus:outline-none"
+								<CustomInput
+									onChange={handleChange("password")}
+									type="password"
+									placeholder="Password"
+									required
 								/>
 							</div>
 
-							<button className="w-full p-3 mt-4 bg-indigo-600 text-white rounded shadow">
-								Login
-							</button>
+							<CustomButton
+								buttonText="Login"
+								className="text-lg"
+							/>
 						</form>
 					</div>
 
