@@ -53,6 +53,7 @@ const CustomInput = forwardRef(function Input(
 						className,
 						icon ? "w-[85%]" : "w-full",
 						required ? "input_is_required" : "",
+						disabled ? "cursor-not-allowed" : "",
 					)}
 				/>
 				{/* <div className="peer-[.input_is_required]:peer-required:block hidden text-[red] text-sm">

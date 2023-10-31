@@ -6,11 +6,11 @@ import CustomInput from "../common/input";
 import useRegisterMutation from "../../../../hooks/mutations/useRegisterMutation";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ActivityIndicator from "../loaders/ActivityIndicator";
 
 const RegisterForm = () => {
-	const { state, handleChange, register, loading, setLoading } =
-		useRegisterMutation();
 	const [showPassword, setShowPassword] = useState<boolean>(false);
+	const { state, handleChange, register, loading } = useRegisterMutation();
 
 	return (
 		<form
@@ -22,15 +22,16 @@ const RegisterForm = () => {
 				</h1>
 				<div className="bg-white rounded-lg overflow-hidden shadow-2xl">
 					<div className="p-8">
-						<form method="POST" className="" action="#">
+						<>
 							<div className="mb-5">
 								<CustomInput
 									id="username"
 									onChange={handleChange("username")}
 									type="text"
 									placeholder="Username"
+									disabled={loading}
 									required
-									value={state.email}
+									value={state.username}
 								/>
 							</div>
 							<div className="mb-5">
@@ -39,6 +40,7 @@ const RegisterForm = () => {
 									onChange={handleChange("email")}
 									type="email"
 									placeholder="Email"
+									disabled={loading}
 									required
 									value={state.email}
 								/>
@@ -49,6 +51,7 @@ const RegisterForm = () => {
 									onChange={handleChange("password")}
 									type={showPassword ? "text" : "password"}
 									placeholder="Password"
+									disabled={loading}
 									required
 									value={state.password}
 									icon={
@@ -72,6 +75,7 @@ const RegisterForm = () => {
 									onChange={handleChange("avatar")}
 									type="file"
 									placeholder="Avatar Image"
+									disabled={loading}
 									label="Avatar Image"
 									labelClass="text-indigo-500 bg-transparent font-thin"
 									value={state?.avatar?.name}
@@ -79,10 +83,13 @@ const RegisterForm = () => {
 								/>
 							</div>
 							<CustomButton
-								buttonText="Login"
-								className="text-lg"
+								type="submit"
+								buttonText={loading ? "" : "Login"}
+								className="text-lg flex items-center justify-center"
+								icon={loading ? <ActivityIndicator /> : null}
+								disabled={loading}
 							/>
-						</form>
+						</>
 					</div>
 
 					<div className="flex flex-wrap gap-2 justify-between p-8 text-sm border-t border-gray-300 bg-gray-100">

@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { ToastOptions, ToastProps } from "react-toastify/dist/types";
+import { ToastOptions } from "react-toastify/dist/types";
 
 type NotificationType = "error" | "success" | "warning" | "info";
 
@@ -9,38 +9,59 @@ interface NotificationProps {
 	theme?: "dark" | "colored" | "light";
 	message: string;
 	options?: ToastOptions;
+	timeout?: ToastOptions["autoClose"];
 }
 
-const useAlertNotification = (props: NotificationProps) => {
-	useEffect(() => {
-		if (!props.message || !props.type) return;
-		const { type, message, options, theme } = props;
+const useAlertNotification = () => {
+	const [showAlert, setShowAlert] = useState<boolean>(false);
+
+	const alert = (props: NotificationProps) => {
+		const { type, message, options, theme, timeout = 5000 } = props;
+
+		if (!message || !type) return;
+
 		const toastProps: ToastOptions = {
 			toastId: type,
-			autoClose: 5000,
+			autoClose: timeout,
 			hideProgressBar: true,
 			theme: theme || "colored",
+			...options,
 		};
+
 		switch (type) {
 			case "error":
-				toast.error(message, { ...toastProps, ...options });
+				toast.error(message, toastProps);
 				break;
 			case "success":
-				toast.success(message, { ...toastProps, ...options });
+				toast.success(message, toastProps);
 				break;
 			case "warning":
-				toast.warning(message, { ...toastProps, ...options });
+				toast.warning(message, toastProps);
 				break;
 			case "info":
-				toast.info(message, { ...toastProps, ...options });
+				toast.info(message, toastProps);
 				break;
 			default:
-				toast(message, { ...toastProps, ...options });
+				toast(message, toastProps);
 		}
-		// return toast.dismiss(type);
-	}, [props]);
 
-	return null;
+		setShowAlert(true);
+
+		setTimeout(
+			() => {
+				if (showAlert) setShowAlert(false);
+			},
+			typeof timeout === "number" ? timeout : 5000,
+		);
+	};
+
+	useEffect(() => {
+		return () => {
+			toast.dismiss();
+		};
+	}, []);
+
+	return { alert };
 };
 
 export default useAlertNotification;

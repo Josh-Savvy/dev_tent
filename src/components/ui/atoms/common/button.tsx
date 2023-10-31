@@ -3,10 +3,10 @@ import classNames from "classnames";
 import ICustomButtonProps from "../../../../interfaces/button.interface";
 
 const CustomButton = (props: ICustomButtonProps) => {
-	const { className, buttonText, disabled, icon, ...rest } = props;
+	const { className, buttonText, disabled, icon, type, ...rest } = props;
 	return (
 		<button
-			type="button"
+			type={type}
 			{...rest}
 			disabled={disabled}
 			className={classNames(

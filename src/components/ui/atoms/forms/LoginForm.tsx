@@ -8,7 +8,7 @@ import useLoginMutation from "../../../../hooks/mutations/useLoginMutation";
 import { Link } from "react-router-dom";
 
 const LoginForm = () => {
-	const { state, login, handleChange } = useLoginMutation();
+	const { state, login, handleChange, loading } = useLoginMutation();
 	const [showPassword, setShowPassword] = useState<boolean>(false);
 	return (
 		<form
@@ -20,7 +20,7 @@ const LoginForm = () => {
 				</h1>
 				<div className="bg-white rounded-lg overflow-hidden shadow-2xl">
 					<div className="p-8">
-						<form method="POST" className="" action="#">
+						<>
 							<div className="mb-5">
 								<CustomInput
 									id="email"
@@ -54,12 +54,12 @@ const LoginForm = () => {
 									}
 								/>
 							</div>
-
 							<CustomButton
-								buttonText="Login"
+								buttonText={loading ? "" : "Login"}
 								className="text-lg"
+								icon={loading ? <ActivityIndicator /> : null}
 							/>
-						</form>
+						</>
 					</div>
 
 					<div className="flex justify-between p-8 text-sm border-t border-gray-300 bg-gray-100">
