@@ -12,7 +12,7 @@ const useLoginMutation = () => {
 	};
 	const [state, setState] = useState<ILoginState>(initialState);
 	const [loading, setLoading] = useState<boolean>(false);
-	const handleSubmit = (e: FormEvent) => {
+	const login = (e: FormEvent) => {
 		e.preventDefault();
 		console.log();
 	};
@@ -21,7 +21,7 @@ const useLoginMutation = () => {
 			setLoading(false);
 			setState({ ...state, [field]: e.target.value });
 		};
-	return { state, handleSubmit, setLoading, loading, handleChange };
+	return { state, login, setLoading, loading, handleChange };
 };
 
 export default useLoginMutation;

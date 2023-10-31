@@ -15,10 +15,10 @@ const CustomInput = forwardRef(function Input(
 		label,
 		required,
 		value,
-		...inputRest
+		type,
+		labelClass,
+		...rest
 	} = props;
-
-	console.log(value);
 
 	return (
 		<>
@@ -33,17 +33,21 @@ const CustomInput = forwardRef(function Input(
 				{label ? (
 					<label
 						htmlFor={props.id}
-						className="block mb-2 text-sm bg-[#fff] px-3 p-1 -top-4 text-gray-600 text-sm absolute">
+						className={classNames(
+							"block mb-2 text-sm bg-[#fff] p-1 -top-4 text-gray-600 text-sm absolute",
+							labelClass,
+						)}>
 						{label}
 					</label>
 				) : null}
 				<input
 					ref={ref}
 					placeholder={props.placeholder}
-					{...inputRest}
+					{...rest}
 					disabled={disabled}
 					required={required}
 					value={value}
+					type={type}
 					className={classNames(
 						"flex-grow focus:outline-none focus:ring-0 bg-transparent placeholder:text-sm placeholder:text-indigo-500 placeholder:font-thin p-1 text-indigo-500 text-indigo-500",
 						className,

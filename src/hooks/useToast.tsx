@@ -6,6 +6,7 @@ type NotificationType = "error" | "success" | "warning" | "info";
 
 interface NotificationProps {
 	type: NotificationType;
+	theme?: "dark" | "colored" | "light";
 	message: string;
 	options?: ToastOptions;
 }
@@ -13,12 +14,12 @@ interface NotificationProps {
 const useAlertNotification = (props: NotificationProps) => {
 	useEffect(() => {
 		if (!props.message || !props.type) return;
-		const { type, message, options } = props;
+		const { type, message, options, theme } = props;
 		const toastProps: ToastOptions = {
 			toastId: type,
 			autoClose: 5000,
 			hideProgressBar: true,
-			theme: "colored",
+			theme: theme || "colored",
 		};
 		switch (type) {
 			case "error":
@@ -36,6 +37,7 @@ const useAlertNotification = (props: NotificationProps) => {
 			default:
 				toast(message, { ...toastProps, ...options });
 		}
+		// return toast.dismiss(type);
 	}, [props]);
 
 	return null;

@@ -10,7 +10,8 @@ export default interface ICustomInputProps
 	disabled?: boolean;
 	required?: boolean;
 	value?: string | number | readonly string[];
-	label?: string;
 	type?: HTMLInputTypeAttribute;
+	labelClass?: string;
+	label?: string;
 	containerProps?: HTMLAttributes<HTMLDivElement>;
 }
