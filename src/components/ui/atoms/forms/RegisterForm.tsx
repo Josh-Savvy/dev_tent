@@ -76,20 +76,44 @@ const RegisterForm = () => {
 							</div>
 							<div className="mb-5 flex flex-col justify-start items-start">
 								<div
-									className="text-indigo-500 flex items-center gap-3 font-thin text-sm cursor-pointer select-none"
+									className="my-1.5 text-indigo-500 flex items-center gap-3 font-thin text-sm cursor-pointer select-none hover:opacity-60 duration-300"
 									onClick={() => {
 										if (avatarInputRef.current)
 											avatarInputRef.current.click();
 									}}>
 									<MUI_ICONS.AddAPhotoTwoTone />
 									<p className="">
-										{state?.avatarUploadText}
+										{state?.avatarUploadText &&
+										state?.imagePreview
+											? state?.avatarUploadText.length >=
+											  15
+												? state?.avatarUploadText
+														?.split(".")[0]
+														.slice(0, 15) +
+												  "....." +
+												  state?.avatarUploadText
+														?.split(".")[0]
+														.slice(15, 20) +
+												  "." +
+												  state?.avatarUploadText?.split(
+														".",
+												  )[1]
+												: state?.avatarUploadText?.split(
+														".",
+												  )[0] +
+												  "." +
+												  state?.avatarUploadText?.split(
+														".",
+												  )[1]
+											: state?.avatarUploadText}
 									</p>
-									<img
-										src={state?.imagePreview}
-										alt=""
-										className="h-8 w-8 rounded-full"
-									/>
+									{state?.imagePreview && (
+										<img
+											src={state?.imagePreview}
+											alt=""
+											className="h-9 w-9 rounded-full"
+										/>
+									)}
 								</div>
 								<CustomInput
 									ref={avatarInputRef}
