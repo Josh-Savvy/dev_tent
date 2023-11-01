@@ -1,16 +1,21 @@
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import * as MUI_ICONS from "@mui/icons-material";
 import CustomButton from "../common/button";
 import CustomInput from "../common/input";
 import useRegisterMutation from "../../../../hooks/mutations/useRegisterMutation";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ActivityIndicator from "../loaders/ActivityIndicator";
 
 const RegisterForm = () => {
 	const [showPassword, setShowPassword] = useState<boolean>(false);
 	const { state, handleChange, register, loading } = useRegisterMutation();
+	const avatarInputRef = useRef<HTMLInputElement>(null);
+	useEffect(() => {
+		console.log(state);
+	}, [state]);
 
 	return (
 		<form
@@ -69,17 +74,36 @@ const RegisterForm = () => {
 									}
 								/>
 							</div>
-							<div className="mb-5">
+							<div className="mb-5 flex flex-col justify-start items-start">
+								<div
+									className="text-indigo-500 flex items-center gap-3 font-thin text-sm cursor-pointer select-none"
+									onClick={() => {
+										if (avatarInputRef.current)
+											avatarInputRef.current.click();
+									}}>
+									<MUI_ICONS.AddAPhotoTwoTone />
+									<p className="">
+										{state?.avatarUploadText}
+									</p>
+									<img
+										src={state?.imagePreview}
+										alt=""
+										className="h-8 w-8 rounded-full"
+									/>
+								</div>
 								<CustomInput
+									ref={avatarInputRef}
 									id="avatar"
 									onChange={handleChange("avatar")}
+									accept=".jpg, .jpeg, .png"
 									type="file"
 									placeholder="Avatar Image"
 									disabled={loading}
 									label="Avatar Image"
 									labelClass="text-indigo-500 bg-transparent font-thin"
-									value={state?.avatar?.name}
+									// value={state?.avatar?.name}
 									className="mt-2"
+									containerProps={{ className: "hidden" }}
 								/>
 							</div>
 							<CustomButton

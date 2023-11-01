@@ -12,6 +12,7 @@ export default interface ICustomInputProps
 	value?: string | number | readonly string[];
 	type?: HTMLInputTypeAttribute;
 	labelClass?: string;
+	accept?: string;
 	label?: string;
 	containerProps?: HTMLAttributes<HTMLDivElement>;
 }

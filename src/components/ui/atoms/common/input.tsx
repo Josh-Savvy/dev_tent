@@ -17,6 +17,7 @@ const CustomInput = forwardRef(function Input(
 		value,
 		type,
 		labelClass,
+		accept,
 		...rest
 	} = props;
 
@@ -47,6 +48,7 @@ const CustomInput = forwardRef(function Input(
 					disabled={disabled}
 					required={required}
 					value={value}
+					accept={accept}
 					type={type}
 					className={classNames(
 						"flex-grow focus:outline-none focus:ring-0 bg-transparent placeholder:text-sm placeholder:text-indigo-500 placeholder:font-thin p-1 text-indigo-500 text-indigo-500",
