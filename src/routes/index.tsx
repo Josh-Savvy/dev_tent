@@ -8,13 +8,13 @@ const routes: IRouteProps[] = [
 		name: "Home",
 		path: "/",
 		element: <Home />,
-		protected: true,
+		// protected: true,
 	},
 	{
+		index: true,
 		name: "Login",
 		path: "/login",
 		element: <Login />,
-		index: true,
 	},
 	{
 		name: "Register",

@@ -15,7 +15,7 @@ const Navbar = () => {
 		location.pathname.includes(path),
 	);
 	return (
-		<div className="flex sticky top-0 z-40 w-full p-4 bg-black/50 backdrop-blur-lg lg:px-20">
+		<div className="flex sticky top-0 z-50 w-full bg-black p-4 sm:px-10 lg:px-20 border-b-2 border-indigo-500/80">
 			<Link to="/">
 				<h1 className="text-xl text-center flex justify-center font-bold items-center gap-4">
 					<FestivalIcon fontSize="inherit" /> DevTent

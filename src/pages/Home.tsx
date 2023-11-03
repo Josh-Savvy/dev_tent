@@ -1,11 +1,9 @@
-import React from "react";
-import CustomButton from "../components/ui/atoms/common/button";
+import ChatInterface from "../components/organisms/home/chat";
 
 const Home = () => {
 	return (
-		<div className="grid min-h-[300vh]">
-			Home'
-			<div className=""></div>
+		<div className="grid min-h-[100vh] p-4 sm:px-10 lg:px-20">
+			<ChatInterface />
 		</div>
 	);
 };
